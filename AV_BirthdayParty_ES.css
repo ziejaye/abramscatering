@@ -1,0 +1,407 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body{
+  width: 100%;
+  height: 100vh;
+  background-image: url(AV_mainbg.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family:Arial, Helvetica, sans-serif;
+}
+ 
+.btn{
+  position: absolute;
+  top: 15px;
+  left: 25px;
+  height: 45px;
+  width: 45px;
+  text-align: center;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: left 0.4s ease;
+}
+.btn.click{
+  left: 260px;
+}
+.btn span{
+  color: white;
+  font-size: 28px;
+  line-height: 45px;
+}
+.btn.click span:before{
+  content: '\f00d';
+}
+.sidebar{
+  position: fixed;
+  width: 250px;
+  height: 100%;
+  left: -250px;
+  background: #dbc894;
+  opacity: 0.;
+  transition: left 0.4s ease;
+}
+.sidebar.show{
+  left: 0px;
+}
+.sidebar .text{
+  color: white;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 65px;
+  text-align: center;
+  background: #1e1e1e;
+  letter-spacing: 1px;
+}
+nav ul{
+  background: #1b1b1b;
+  height: 100%;
+  width: 100%;
+  list-style: none;
+}
+nav ul li{
+  line-height: 60px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+nav ul li:last-child{
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+nav ul li a{
+  position: relative;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  padding-left: 40px;
+  font-weight: 500;
+  display: block;
+  width: 100%;
+  border-left: 3px solid transparent;
+}
+nav ul li.active a{
+  color: cyan;
+  background: #1e1e1e;
+  border-left-color: cyan;
+}
+nav ul li a:hover{
+  background: #1e1e1e;
+}
+nav ul ul{
+  position: static;
+  display: none;
+}
+nav ul .feat-show.show{
+  display: block;
+}
+nav ul .serv-show.show1{
+  display: block;
+}
+nav ul ul li{
+  line-height: 42px;
+  border-top: none;
+}
+nav ul ul li a{
+  font-size: 17px;
+  color: #e6e6e6;
+  padding-left: 80px;
+}
+nav ul li.active ul li a{
+  color: #e6e6e6;
+  background: #141414;
+  border-left-color: transparent;
+}
+nav ul ul li a:hover{
+  color: cyan!important;
+  background: #1e1e1e!important;
+}
+nav ul li a span{
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  font-size: 22px;
+  transition: transform 0.4s;
+}
+nav ul li a span.rotate{
+  transform: translateY(-50%) rotate(-180deg);
+}
+.content{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color: #202020;
+  z-index: -1;
+  text-align: center;
+}
+.content .header{
+  font-size: 45px;
+  font-weight: 600;
+}
+.content p{
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.menu-bar{
+  background: rgb(247, 226, 181);
+  text-align: center;
+
+}
+
+.menu-bar ul{
+  display: inline-flex; 
+  list-style: none;
+  color: rgb(236, 218, 166);
+}
+
+.menu-bar ul li{
+  width: 300 0 3px;
+  padding: 20px 0 20px;    
+  margin: 0 70px 0;
+
+}
+
+.menu-bar ul li a {
+  text-decoration: none;
+  color: black;
+  margin-top: 0;
+}
+
+
+
+.sub-menu-1{
+  display: none;
+
+}
+
+.menu-bar ul li:hover .sub-menu-1 {
+  display: block;
+  position: absolute;
+  background: rgb(247, 226, 181);
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+}
+
+.menu-bar ul li:hover .sub-menu-1 ul {
+  display: block;
+  margin: 0 -50px 0;
+
+}
+
+.menu-bar ul li:hover .sub-menu-1 ul li {
+  width: 250px;
+  padding: 10px;
+  border-bottom: 1px solid black;
+}
+
+.menu-bar ul li:hover .sub-menu-1 ul li:last-child{
+  border-bottom: none;
+}
+
+.menu-bar ul li:hover .sub-menu-1 ul li a:hover{
+  color:white;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  height: 75px;
+}
+
+
+.logo img {
+  width: 76px;
+  height: 75px;
+} 
+
+
+.menu-bar .fa{
+  margin-right: 8px;
+}
+
+
+.active, .menu-bar ul li:hover 
+{
+    background: rgb(211, 166, 108) ;
+    border-radius: 100px;
+}
+
+.three{
+  width: 35px;
+  height: 5px;
+  background-color: black;
+  margin: 6px 5px;
+}
+
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+  
+  .change .bar1 {
+    transform: translate(0, 11px) rotate(-45deg);
+  }
+  
+  .change .bar2 {opacity: 0;}
+  
+  .change .bar3 {
+    transform: translate(0, -11px) rotate(45deg);
+  }
+
+  #mySearch {
+    width: 248px;
+    font-size: 18px;
+    padding: 10px;
+    border:1px solid #000000;
+    display: center;
+    border-radius: 10px;
+  }
+
+/* SIDE BAR: Log in / sign up */ 
+  nav ul .login-signup {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+  }
+  
+  nav ul .login-signup a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px;
+    display: block;
+    width: 100%;
+  }
+
+
+/* 8 Container */ 
+.container {
+  max-width: 100%;
+  width: 100%;
+  background: #dbc894;
+  margin: 0;
+  padding: 0;
+  height: 548px; /* Set height to 50% of the viewport height */
+  padding-bottom: 100px; /* Adjust the padding as needed to occupy the white space */
+}
+
+.container ul {
+  padding: 0;
+  margin: 0;
+  margin-left: 50px;
+  margin-right: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.container ul li {
+  list-style: none;
+  width: calc(25% - 80px); /* Set the width for square containers */
+  height: 200px; /* Set the height to match the width for square containers */
+  background: #C19A6B;
+  margin: 20px; /* Adjust margin to create spacing between boxes */
+  margin-top: 45px; 
+}
+
+.container ul li .title {
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  background: rgb(255, 255, 255);
+  text-align: center;
+}
+
+/* Image Top 8*/
+
+.centered-image {
+  width: 100%; /* Set the width to 100% */
+  height: 100%; /* Set the height to 100% */
+  object-fit: cover; /* Maintain aspect ratio and cover the container */
+  object-position: center center; /* Center the image */
+}
+
+.image-container.top-image {
+  width: auto; /* Make the image container full viewport width */
+  height: 250px; /* Set the desired height for the image container */
+  overflow: hidden; /* Hide overflow to crop the image */
+  position: relative;
+  z-index: -1;
+  text-align: center;
+
+}
+  
+  .image-container.top-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio and fill the container */
+  }
+
+  .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio and fill the container */
+  }
+
+.text-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(232, 228, 201, 0.3); /* Adjust the background overlay color and opacity as desired */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .text-overlay h1 {
+    font-size: 24px;
+    margin: 10px 0;
+  }
+  
+  .text-overlay p {
+    font-size: 16px;
+    margin: 10px 0;
+  }
+
+/* Select CSS */ 
+
+.select {
+  background-color: #C19A6B;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  
+}
+
+select{
+  background-color:  #dbc894; 
+  border-radius: 10px;
+  font-size: 20px;
+  width: 255px;
+  margin-right: 15px; /* Add margin to the right of the select elements */
+}
+
+option{
+  color: black;
+}
+
+.select1{
+  font-size: 20px;
+}
